@@ -1,0 +1,29 @@
+/* BlogPosts.css */
+.blog-posts-container {
+    padding: 24px;
+    background: #ffffff; /* Light background */
+    min-height: 360px;
+    color: #000000; /* Dark text */
+  }
+  
+  .header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    color: #000000;
+  }
+  
+  .ant-btn-primary {
+    background-color: #1890ff; /* Primary button color */
+    border-color: #1890ff;
+  }
+  .deleteIcons{
+    fill: red;
+    color: red;
+  }
+   * .ant-btn-primary:hover, .ant-btn-primary:focus {
+    background-color: #40a9ff; /* Hover and focus state for button */
+    border-color: #40a9ff;
+  }
+  

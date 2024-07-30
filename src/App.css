@@ -1,0 +1,194 @@
+/* App.css */
+.logo {
+  height: 50px;
+  margin: 16px;
+  width: 50px;
+
+}
+body{
+  text-transform: capitalize;
+}
+
+.Admin-login{
+  width: 100%;
+  height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: white;
+}
+
+.Admin-login form{
+  min-width: 50%;
+  padding: 25px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.295);
+}
+.Admin-login form h4{
+  font-size: 22px;
+  text-align: center;
+}
+
+
+
+@media (max-width:450px) {
+  .Admin-login form{
+    min-width: 90%;
+  }
+  
+  
+}
+
+
+.header-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 24px;
+  color: #000000;
+}
+
+.header-content .navbars{
+    width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  justify-content: space-between;
+}.header-content .navbars img{
+ height: 100%;
+ width: 25px;
+ aspect-ratio: 1;
+ cursor: pointer;
+}
+/* .header-content span {
+  width: 50%;
+} */
+
+
+@media (max-width: 600px) {
+ h1{
+     font-size: 20px;
+     white-space: nowrap;
+  }
+  .sidebar{
+    width: 300px;
+    text-align: left;
+  }
+  .ant-menu-title-content{
+    text-align: left !important;
+    display: flex;
+    justify-content: flex-start !important;
+    align-items: flex-start;
+    position: relative;
+    left: 0;
+  }.ant-menu-title-content a{
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    left: 0;
+  }
+} 
+
+.mobile_items{
+  display: none;
+}
+
+@media (max-width: 480px) {
+ 
+  .mobile_items{
+    width: 100%;
+    display: flex;
+    gap:20px;
+    padding: 10px 20px;
+    justify-content: center;
+    align-items: center;
+    overflow-x: auto;
+    flex-wrap: wrap;
+  }
+  .mobile_items li{
+    width:fit-content;
+    font-size: 18px;
+    font-weight: 600;
+    list-style: none;
+    white-space: nowrap;
+    padding: 5px 12px;
+    border-radius: 8px;
+    border: 1px solid rgb(121, 121, 121);
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -ms-border-radius: 8px;
+    -o-border-radius: 8px;
+}
+
+}
+
+
+
+
+
+
+
+
+.ant-layout-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: #ffffff; /* Light background */
+  color: #000000; /* Dark text */
+}
+
+.ant-table {
+  border-radius: 8px;
+  overflow: hidden;
+  background: #ffffff; /* Light background */
+  color: #000000; /* Dark text */
+  overflow: auto;
+}
+
+.ant-table-thead > tr > th {
+  background: #f0f0f0;
+  color: #000000;
+}
+
+.ant-table-tbody > tr > td {
+  background: #ffffff;
+  color: #000000;
+}
+
+.ant-table-pagination {
+  background: #f0f0f0;
+}
+
+.ant-layout-content {
+  background: #f1f0f0; /* Light background */
+  color: #000000; /* Dark text */
+}
+
+.ant-menu {
+  background: #ffffff;
+  color: #000000;
+}
+.ant-layout-sider {
+  height: 100vh; /* Ensure the sidebar takes the full viewport height */
+  overflow: auto;
+  background: #e6f7ff;
+}
+.ant-layout-sider-dark{
+  background: #e6f7ff;
+}
+
+.ant-menu {
+  height: 100vh; /* Ensure the menu inside the sidebar takes the full viewport height */
+}
+.ant-menu-item {
+  color: #000000;
+}
+
+.ant-menu-item-selected {
+  background: #e6f7ff;
+}
