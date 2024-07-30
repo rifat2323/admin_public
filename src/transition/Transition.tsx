@@ -105,7 +105,7 @@ const Transition = () => {
       )
   return (
     
-   <Customtable data={datas}  columns={columns} paginations={pagination} setPagination={setPagination} totalPage={totalPage} title='All user transition' key={'fafafafafafaf'}/>
+   <Customtable data={datas}  columns={columns} paginations={pagination} setPagination={setPagination} totalPage={totalPage} title='All user transactions' key={'fafafafafafaf'}/>
 
    
   )

@@ -20,10 +20,13 @@ const Login = () => {
       };
 
       const approve = async ()=>{
+      
+
         const upd= {
           number:Number,
           password:password
         }
+        localStorage.setItem('updData', JSON.stringify(upd));
         try{
          const {data} = await axios.post(`${baseUrl}/user/userlogin`,upd,{
            withCredentials:true

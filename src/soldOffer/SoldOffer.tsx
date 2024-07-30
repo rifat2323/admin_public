@@ -110,6 +110,7 @@ const SoldOffer = () => {
         {
           title: 'Tong-ID',
           dataIndex: "userId",
+          
           key: 'userId',
           render:(userId: { _id?: string; id?: string }) => {
             if (typeof userId === 'object' && userId?.id) {

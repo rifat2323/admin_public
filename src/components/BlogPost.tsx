@@ -88,6 +88,7 @@ const BlogPosts: React.FC = () => {
       title: 'Category',
       dataIndex: 'category',
       key: 'category',
+      render: (category: string) => category === 'Grameen' ? 'Grameenphone' : category,
     },
     // {
     //   title: 'Price',

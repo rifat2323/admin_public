@@ -58,17 +58,51 @@ function App() {
         setIsLogin(true)
         setLoading(false)
        }else{
-        setIsLogin(false)
-        setLoading(false)
+        const storedValue: string | null = localStorage.getItem('someKey');
+        if (storedValue !== null) {
+          setIsLogin(true)
+          const parsedValue = JSON.parse(storedValue);
+          console.log(parsedValue)
+          const {data} = await axios.post(`${baseUrl}/user/userlogin`,parsedValue,{
+            withCredentials:true
+          })
+          if(data.isAdmin){
+            setIsLogin(true)
+            setLoading(false)
+            
+          }
+        } else {
+          console.log('No value found for the key.');
+          setIsLogin(false)
+          setLoading(false)
+        }
+       
          
        }
       
 
      }catch(error){
-       console.log(error)
+
+      const storedValue: string | null = localStorage.getItem('someKey');
+      if (storedValue !== null) {
+        setLoading(true)
+        const parsedValue = JSON.parse(storedValue);
+        console.log(parsedValue)
+        const {data} = await axios.post(`${baseUrl}/user/userlogin`,parsedValue,{
+          withCredentials:true
+        })
+        if(data.isAdmin){
+          setIsLogin(true)
+          setLoading(false)
+          
+        }
+      } else {
+        console.log('No value found for the key.');
+        setIsLogin(false)
+        setLoading(false)
+      }
       
-       setIsLogin(false)
-       setLoading(false)
+     
      }
     }
     getuser()
@@ -116,7 +150,7 @@ function App() {
                 <Link to="/complete">complete offers</Link>
               </Menu.Item>
               <Menu.Item key="6">
-                <Link to="/transition">transactions</Link>
+                <Link to="/transactions">transactions</Link>
               </Menu.Item>
               <Menu.Item key="7">
                 <Link to="/customerservice">customer service</Link>
@@ -150,7 +184,7 @@ function App() {
                 <Link to="/complete">complete offers</Link>
               </li>
               <li  onClick={()=>{setActiveMenuItem(6)}}>
-                <Link to="/transition">transactions</Link>
+                <Link to="/transactions">transactions</Link>
               </li>
               <li  onClick={()=>{setActiveMenuItem(7)}}>
                 <Link to="/customerservice">customer service</Link>
@@ -204,7 +238,7 @@ function App() {
                     </Suspense>
                     
                     } />
-                  <Route path="/transition" element={
+                  <Route path="/transactions" element={
                     <Suspense fallback={<Loader/>}>
     
                       <Transition/>
