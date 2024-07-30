@@ -12,8 +12,8 @@ const categories = [
     value:"Robi"
   },
   {
-    key:"Airtle",
-    value:"Airtle"
+    key:"Airtel",
+    value:"Airtel"
   },
   {
     key:"Banglalink",

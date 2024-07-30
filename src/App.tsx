@@ -58,11 +58,22 @@ function App() {
         setIsLogin(true)
         setLoading(false)
        }else{
-        const storedValue: string | null = localStorage.getItem('someKey');
+        setIsLogin(false)
+        setLoading(false)
+         
+       }
+      
+
+     // eslint-disable-next-line @typescript-eslint/no-explicit-any
+     }catch(error:any){
+       console.log(error)
+       if(error.response.status === 408){
+        const storedValue: string | null = localStorage.getItem('updData');
+        
         if (storedValue !== null) {
-          setIsLogin(true)
+          setLoading(true)
           const parsedValue = JSON.parse(storedValue);
-          console.log(parsedValue)
+          console.log(`parse value:${parsedValue}`)
           const {data} = await axios.post(`${baseUrl}/user/userlogin`,parsedValue,{
             withCredentials:true
           })
@@ -76,31 +87,12 @@ function App() {
           setIsLogin(false)
           setLoading(false)
         }
-       
-         
-       }
-      
 
-     }catch(error){
-
-      const storedValue: string | null = localStorage.getItem('someKey');
-      if (storedValue !== null) {
-        setLoading(true)
-        const parsedValue = JSON.parse(storedValue);
-        console.log(parsedValue)
-        const {data} = await axios.post(`${baseUrl}/user/userlogin`,parsedValue,{
-          withCredentials:true
-        })
-        if(data.isAdmin){
-          setIsLogin(true)
-          setLoading(false)
-          
-        }
-      } else {
-        console.log('No value found for the key.');
+       }else{
         setIsLogin(false)
         setLoading(false)
-      }
+
+       }
       
      
      }
@@ -114,6 +106,7 @@ function App() {
    })
    console.log(data)
     if(data.status === 200){
+      localStorage.clear()
      
       setIsAuth(false)
     notification.open({
